@@ -39,6 +39,7 @@ class MainViewController: UIViewController {
     private var pasteBoard: Any?
     private var pasteKeyFrame: KeyFrame?
     private var fileName: String?
+    private var imagesToPrint: [UIImage] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         paletteCollectionView.dragInteractionEnabled = true
@@ -69,6 +70,16 @@ class MainViewController: UIViewController {
         case let navigation as UINavigationController:
             if let destination = navigation.topViewController as? BRSelectDeviceTableViewController {
                 destination.delegate = self
+                let savedIndex = keyFrameIndex
+                imagesToPrint = keyFrames.indices.map { index -> UIImage in
+                    keyFrameIndex = index
+                    setup()
+                    return UIGraphicsImageRenderer(bounds: canvasView.bounds).image {renderer in
+                        self.canvasView.drawHierarchy(in: self.canvasView.bounds, afterScreenUpdates: true)
+                    }
+                }
+                keyFrameIndex = savedIndex
+                setup()
             }
         default:
             break
@@ -330,7 +341,6 @@ class MainViewController: UIViewController {
         printInfo.jobName = "Flipbook"
         printController.printInfo = printInfo
         let savedIndex = keyFrameIndex
-
         let images = keyFrames.indices.map { index -> UIImage in
             keyFrameIndex = index
             setup()
@@ -530,22 +540,13 @@ extension MainViewController: CreateLoadViewControllerDelegate {
 
 extension MainViewController: BRSelectDeviceTableViewControllerDelegate {
     func setSelected(deviceInfo: BRPtouchDeviceInfo) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
         guard let modelName = deviceInfo.strModelName else {return}
         let venderName = "Brother "
         let dev = venderName + modelName
         guard let num = deviceInfo.strSerialNumber else {return}
-        let savedIndex = keyFrameIndex
-        let images = keyFrames.indices.map { index -> UIImage in
-            keyFrameIndex = index
-            self.setup()
-            return UIGraphicsImageRenderer(bounds: canvasView.bounds).image {renderer in
-                self.canvasView.drawHierarchy(in: self.canvasView.bounds, afterScreenUpdates: true)
-            }
-        }
-        keyFrameIndex = savedIndex
-        setup()
-        printImage(images: images, deviceName: dev, serialNumber: num)
+        printImage(images: imagesToPrint, deviceName: dev, serialNumber: num)
+        imagesToPrint.removeAll()
     }
 }
 

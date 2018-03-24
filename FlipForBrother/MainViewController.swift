@@ -71,13 +71,17 @@ class MainViewController: UIViewController {
             if let destination = navigation.topViewController as? BRSelectDeviceTableViewController {
                 destination.delegate = self
                 let savedIndex = keyFrameIndex
+                canvasView.clipsToBounds = true
+                let bounds = CGRect(x: 0, y: 0, width: canvasView.bounds.height, height: canvasView.bounds.width)
                 imagesToPrint = keyFrames.indices.map { index -> UIImage in
                     keyFrameIndex = index
                     setup()
                     return UIGraphicsImageRenderer(bounds: canvasView.bounds).image {renderer in
+                        renderer.cgContext.rotate(by: CGFloat.pi / 2)
                         self.canvasView.drawHierarchy(in: self.canvasView.bounds, afterScreenUpdates: true)
                     }
                 }
+                canvasView.clipsToBounds = false
                 keyFrameIndex = savedIndex
                 setup()
             }

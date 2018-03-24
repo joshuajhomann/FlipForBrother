@@ -396,7 +396,7 @@ class MainViewController: UIViewController {
         setup()
         timeLineCollectionView.reloadData()
     }
-    func printImage (image: UIImage, deviceName: String, serialNumber: String) {
+    func printImage (images: [UIImage], deviceName: String, serialNumber: String) {
 
         guard let ptp = BRPtouchPrinter(printerName: deviceName, interface: CONNECTION_TYPE.BLUETOOTH) else {
             print("*** Prepare Print Error ***")
@@ -413,11 +413,12 @@ class MainViewController: UIViewController {
             print("*** Printer is not Ready ***")
             return
         }
-
         if ptp.startCommunication() {
-            let result = ptp.print(image.cgImage, copy: 1)
-            if result != ERROR_NONE_ {
-                print ("*** Printing Error ***")
+            images.forEach { image in
+                let result = ptp.print(image.cgImage, copy: 1)
+                if result != ERROR_NONE_ {
+                    print ("*** Printing Error ***")
+                }
             }
             ptp.endCommunication()
         }
@@ -544,7 +545,7 @@ extension MainViewController: BRSelectDeviceTableViewControllerDelegate {
         }
         keyFrameIndex = savedIndex
         setup()
-        images.forEach { self.printImage(image: $0, deviceName: dev, serialNumber: num) }
+        printImage(images: images, deviceName: dev, serialNumber: num)
     }
 }
 

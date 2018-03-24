@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		031310412065FB0C00192B2C /* The Penguin and the Whale.animation in Resources */ = {isa = PBXBuildFile; fileRef = 036EEC312065F9FF00BA6641 /* The Penguin and the Whale.animation */; };
 		031310442066AF8500192B2C /* BRPtouchPrinterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031310422066AF8400192B2C /* BRPtouchPrinterKit.framework */; };
 		031310452066AF8500192B2C /* BRPtouchPrinterKitW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031310432066AF8400192B2C /* BRPtouchPrinterKitW.framework */; };
 		031310482066AFED00192B2C /* BRSimplePrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031310462066AFED00192B2C /* BRSimplePrintViewController.swift */; };
@@ -31,6 +30,7 @@
 		036EEC242065F81800BA6641 /* load.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036EEC232065F81800BA6641 /* load.storyboard */; };
 		036EEC292065F86200BA6641 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036EEC252065F86200BA6641 /* LaunchScreen.storyboard */; };
 		036EEC2A2065F86200BA6641 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036EEC272065F86200BA6641 /* Main.storyboard */; };
+		038DD5232066F21200AF9383 /* The Penguin and the Whale.animation in Resources */ = {isa = PBXBuildFile; fileRef = 038DD5222066F21200AF9383 /* The Penguin and the Whale.animation */; };
 		03DBB6622066D74900B0E13F /* Penguonaut.animation in Resources */ = {isa = PBXBuildFile; fileRef = 03DBB6612066D74800B0E13F /* Penguonaut.animation */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +63,9 @@
 		036EEC232065F81800BA6641 /* load.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = load.storyboard; sourceTree = "<group>"; };
 		036EEC262065F86200BA6641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		036EEC282065F86200BA6641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		036EEC312065F9FF00BA6641 /* The Penguin and the Whale.animation */ = {isa = PBXFileReference; lastKnownFileType = text; path = "The Penguin and the Whale.animation"; sourceTree = "<group>"; };
+		038DD5222066F21200AF9383 /* The Penguin and the Whale.animation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "The Penguin and the Whale.animation"; path = "../../../Library/Developer/CoreSimulator/Devices/05A50E0F-849D-4498-9651-A0AD0FCBAA47/data/Containers/Data/Application/65E4DD3F-6F22-4CE0-82CB-231D865679BB/Documents/The Penguin and the Whale.animation"; sourceTree = "<group>"; };
 		03DBB6612066D74800B0E13F /* Penguonaut.animation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Penguonaut.animation; sourceTree = "<group>"; };
+		03DBB6652066E72800B0E13F /* FlipForBrother.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlipForBrother.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +115,13 @@
 		0317185D2065F45B00AC9E97 /* FlipForBrother */ = {
 			isa = PBXGroup;
 			children = (
+				03DBB6652066E72800B0E13F /* FlipForBrother.entitlements */,
 				031310472066AFED00192B2C /* BRSelectDeviceTableViewController.swift */,
 				031310462066AFED00192B2C /* BRSimplePrintViewController.swift */,
 				0313104A2066BDAF00192B2C /* PtouchPrinterKit-Bridging-Header.h */,
 				031310422066AF8400192B2C /* BRPtouchPrinterKit.framework */,
 				031310432066AF8400192B2C /* BRPtouchPrinterKitW.framework */,
-				036EEC312065F9FF00BA6641 /* The Penguin and the Whale.animation */,
+				038DD5222066F21200AF9383 /* The Penguin and the Whale.animation */,
 				03DBB6612066D74800B0E13F /* Penguonaut.animation */,
 				031310562066C02900192B2C /* Test print 2 frame.animation */,
 				036EEC252065F86200BA6641 /* LaunchScreen.storyboard */,
@@ -177,6 +179,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -203,11 +210,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				031310412065FB0C00192B2C /* The Penguin and the Whale.animation in Resources */,
 				036EEC242065F81800BA6641 /* load.storyboard in Resources */,
 				031310572066C02A00192B2C /* Test print 2 frame.animation in Resources */,
 				03DBB6622066D74900B0E13F /* Penguonaut.animation in Resources */,
 				036EEC2A2065F86200BA6641 /* Main.storyboard in Resources */,
+				038DD5232066F21200AF9383 /* The Penguin and the Whale.animation in Resources */,
 				036EEC292065F86200BA6641 /* LaunchScreen.storyboard in Resources */,
 				031718662065F45B00AC9E97 /* Assets.xcassets in Resources */,
 			);
@@ -370,7 +377,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FlipForBrother/FlipForBrother.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L4WMJSL77G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs",
@@ -391,7 +400,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = FlipForBrother/FlipForBrother.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L4WMJSL77G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs",

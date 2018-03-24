@@ -72,14 +72,14 @@ class MainViewController: UIViewController {
                 destination.delegate = self
                 let savedIndex = keyFrameIndex
                 canvasView.clipsToBounds = true
-                let bounds = CGRect(x: 0, y: 0, width: canvasView.bounds.height, height: canvasView.bounds.width)
+
                 imagesToPrint = keyFrames.indices.map { index -> UIImage in
                     keyFrameIndex = index
                     setup()
-                    return UIGraphicsImageRenderer(bounds: bounds).image {renderer in
-                        renderer.cgContext.rotate(by: CGFloat.pi / 2)
+                    return UIGraphicsImageRenderer(bounds: self.canvasView.bounds).image {renderer in
                         self.canvasView.drawHierarchy(in: self.canvasView.bounds, afterScreenUpdates: true)
                     }
+
                 }
                 canvasView.clipsToBounds = false
                 keyFrameIndex = savedIndex
@@ -421,6 +421,7 @@ class MainViewController: UIViewController {
         printInfo.strPaperName = "62mmRB"
         printInfo.nPrintMode = PRINT_FIT
         printInfo.nAutoCutFlag = OPTION_AUTOCUT
+        printInfo.nOrientation = ORI_LANDSCAPE
         ptp.setPrintInfo(printInfo)
 
         guard ptp.isPrinterReady() else {

@@ -66,8 +66,10 @@ class MainViewController: UIViewController {
         case let destination as CreateLoadViewController:
             destination.delegate = self
             save()
-        case let destination as BRSelectDeviceTableViewController:
-            destination.delegate = self
+        case let navigation as UINavigationController:
+            if let destination = navigation.topViewController as? BRSelectDeviceTableViewController {
+                destination.delegate = self
+            }
         default:
             break
         }

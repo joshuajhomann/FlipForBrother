@@ -78,6 +78,9 @@ class BRSelectDeviceTableViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func tapCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let deviceInfo = deviceListByMfi?[indexPath.row] {
             self.delegate?.setSelected(deviceInfo: deviceInfo)

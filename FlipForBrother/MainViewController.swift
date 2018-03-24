@@ -76,7 +76,7 @@ class MainViewController: UIViewController {
                 imagesToPrint = keyFrames.indices.map { index -> UIImage in
                     keyFrameIndex = index
                     setup()
-                    return UIGraphicsImageRenderer(bounds: canvasView.bounds).image {renderer in
+                    return UIGraphicsImageRenderer(bounds: bounds).image {renderer in
                         renderer.cgContext.rotate(by: CGFloat.pi / 2)
                         self.canvasView.drawHierarchy(in: self.canvasView.bounds, afterScreenUpdates: true)
                     }

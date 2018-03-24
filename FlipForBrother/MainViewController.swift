@@ -538,7 +538,7 @@ extension MainViewController: BRSelectDeviceTableViewControllerDelegate {
         let savedIndex = keyFrameIndex
         let images = keyFrames.indices.map { index -> UIImage in
             keyFrameIndex = index
-            setup()
+            self.setup()
             return UIGraphicsImageRenderer(bounds: canvasView.bounds).image {renderer in
                 self.canvasView.drawHierarchy(in: self.canvasView.bounds, afterScreenUpdates: true)
             }

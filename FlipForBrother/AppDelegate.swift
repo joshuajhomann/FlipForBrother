@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func copyfileToDocs() {
-        let defaults = ["Test print 2 frame", "The Penguin and the Whale"]
+        let defaults = ["Test print 2 frame", "The Penguin and the Whale", "Penguonaut"]
         let sourcePaths = defaults.flatMap { Bundle.main.url(forResource: $0, withExtension: ".animation") }
         sourcePaths.forEach { path in
             let destPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!

@@ -19,7 +19,7 @@ class CreateLoadViewController: UIViewController {
     var delegate: CreateLoadViewControllerDelegate?
     var fileNames: [String] = []
     var selectedFile: Int?
-    let frames = [2,36,48,60,96]
+    let frames = [24,36,48,60,96]
     override func viewDidLoad() {
         super.viewDidLoad()
         fileNames = (try? FileManager.default.contentsOfDirectory(atPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!)) ?? []

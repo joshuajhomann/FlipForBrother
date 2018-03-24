@@ -34,7 +34,7 @@ class MainViewController: UIViewController {
     }
     private var selectedTransformableView: TransformableView?
     private var transformableViews: [TransformableView] = []
-    private var imageNames: [String] = ["penguin","penguin-blink", "penguin-flap1", "penguin-flap2", "penguin-flap3", "droplet","cloud","water", "ice", "whale", "spout", "splash", "bottle","setting-sun", "ufo", "ufo2","cone","deadpool", "star", "moon", "sun"]
+    private var imageNames: [String] = ["penguin","penguin-blink", "penguin-flap1", "penguin-flap2", "penguin-flap3", "droplet","cloud","water", "ice", "whale", "spout", "splash", "bottle","setting-sun", "ufo", "ufo2","cone", "astro1", "astro2", "astro3", "rocket1", "rocket2", "rocket3", "rocket4", "moon", "night", "crater", "earth"]
     private var framesToGhost = 0
     private var pasteBoard: Any?
     private var pasteKeyFrame: KeyFrame?

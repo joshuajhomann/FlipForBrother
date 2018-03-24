@@ -371,13 +371,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="UDf-mn-xKx" secondAttribute="height" multiplier="127:62" id="Gxf-rQ-mkw"/>
                                                         </constraints>
-                                                        <connections>
-                                                            <outletCollection property="gestureRecognizers" destination="UGh-ib-mlT" appends="YES" id="bAO-LO-HuI"/>
-                                                            <outletCollection property="gestureRecognizers" destination="aaS-Wr-cbK" appends="YES" id="tqP-dB-cGx"/>
-                                                            <outletCollection property="gestureRecognizers" destination="Wcu-9X-WOI" appends="YES" id="RS7-oV-bum"/>
-                                                            <outletCollection property="gestureRecognizers" destination="mAt-Tl-gQe" appends="YES" id="VFW-Mp-roh"/>
-                                                            <outletCollection property="gestureRecognizers" destination="Dbm-vN-lh5" appends="YES" id="Qe0-aE-Mll"/>
-                                                        </connections>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.93698459201388884" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -386,6 +379,13 @@
                                                     <constraint firstItem="UDf-mn-xKx" firstAttribute="width" secondItem="hcz-aY-S8M" secondAttribute="width" constant="-96" id="ufE-je-bgA"/>
                                                     <constraint firstItem="UDf-mn-xKx" firstAttribute="centerY" secondItem="hcz-aY-S8M" secondAttribute="centerY" id="w5Q-9p-fE0"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="aaS-Wr-cbK" appends="YES" id="qYM-sg-4Oo"/>
+                                                    <outletCollection property="gestureRecognizers" destination="Wcu-9X-WOI" appends="YES" id="58I-lf-Aar"/>
+                                                    <outletCollection property="gestureRecognizers" destination="mAt-Tl-gQe" appends="YES" id="g8k-V8-cMk"/>
+                                                    <outletCollection property="gestureRecognizers" destination="UGh-ib-mlT" appends="YES" id="vVS-8L-zvU"/>
+                                                    <outletCollection property="gestureRecognizers" destination="Dbm-vN-lh5" appends="YES" id="893-So-KOX"/>
+                                                </connections>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IO8-Hg-EMK">
                                                 <rect key="frame" x="884" y="0.0" width="128" height="700"/>
@@ -569,7 +569,7 @@
         <!--Select Device Table View Controller-->
         <scene sceneID="FvP-bH-ZAq">
             <objects>
-                <tableViewController storyboardIdentifier="BRSelectDeviceTableViewController" id="onE-Y0-M5P" customClass="BRSelectDeviceTableViewController" customModule="SDK_Sample_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BRSelectDeviceTableViewController" id="onE-Y0-M5P" customClass="BRSelectDeviceTableViewController" customModule="FlipForBrother" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H8A-jk-qEh">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -32,7 +32,6 @@
 		036EEC292065F86200BA6641 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036EEC252065F86200BA6641 /* LaunchScreen.storyboard */; };
 		036EEC2A2065F86200BA6641 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036EEC272065F86200BA6641 /* Main.storyboard */; };
 		03DBB6622066D74900B0E13F /* Penguonaut.animation in Resources */ = {isa = PBXBuildFile; fileRef = 03DBB6612066D74800B0E13F /* Penguonaut.animation */; };
-		03DBB6642066D7F100B0E13F /* Penguonaut.animation in Resources */ = {isa = PBXBuildFile; fileRef = 03DBB6632066D7F100B0E13F /* Penguonaut.animation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +65,6 @@
 		036EEC282065F86200BA6641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		036EEC312065F9FF00BA6641 /* The Penguin and the Whale.animation */ = {isa = PBXFileReference; lastKnownFileType = text; path = "The Penguin and the Whale.animation"; sourceTree = "<group>"; };
 		03DBB6612066D74800B0E13F /* Penguonaut.animation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Penguonaut.animation; sourceTree = "<group>"; };
-		03DBB6632066D7F100B0E13F /* Penguonaut.animation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Penguonaut.animation; path = "../../../Library/Developer/CoreSimulator/Devices/05A50E0F-849D-4498-9651-A0AD0FCBAA47/data/Containers/Data/Application/75F2B8AF-DF28-4514-BD3F-F8D231591A0D/Documents/Penguonaut.animation"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +121,6 @@
 				031310432066AF8400192B2C /* BRPtouchPrinterKitW.framework */,
 				036EEC312065F9FF00BA6641 /* The Penguin and the Whale.animation */,
 				03DBB6612066D74800B0E13F /* Penguonaut.animation */,
-				03DBB6632066D7F100B0E13F /* Penguonaut.animation */,
 				031310562066C02900192B2C /* Test print 2 frame.animation */,
 				036EEC252065F86200BA6641 /* LaunchScreen.storyboard */,
 				036EEC272065F86200BA6641 /* Main.storyboard */,
@@ -206,7 +203,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DBB6642066D7F100B0E13F /* Penguonaut.animation in Resources */,
 				031310412065FB0C00192B2C /* The Penguin and the Whale.animation in Resources */,
 				036EEC242065F81800BA6641 /* load.storyboard in Resources */,
 				031310572066C02A00192B2C /* Test print 2 frame.animation in Resources */,

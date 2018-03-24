@@ -319,7 +319,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Print"/>
                                                         <connections>
-                                                            <action selector="printBook:" destination="gxQ-rv-Fou" eventType="touchUpInside" id="BrV-qw-jGb"/>
+                                                            <segue destination="onE-Y0-M5P" kind="show" id="eq0-CE-q0Y"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msa-Ma-zkB">

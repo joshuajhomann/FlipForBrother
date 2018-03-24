@@ -66,6 +66,8 @@ class MainViewController: UIViewController {
         case let destination as CreateLoadViewController:
             destination.delegate = self
             save()
+        case let destination as BRSelectDeviceTableViewController:
+            destination.delegate = self
         default:
             break
         }
@@ -392,6 +394,35 @@ class MainViewController: UIViewController {
         setup()
         timeLineCollectionView.reloadData()
     }
+    func printImage (image: UIImage, deviceName: String, serialNumber: String) {
+
+        guard let ptp = BRPtouchPrinter(printerName: deviceName, interface: CONNECTION_TYPE.BLUETOOTH) else {
+            print("*** Prepare Print Error ***")
+            return
+        }
+        ptp.setupForBluetoothDevice(withSerialNumber: serialNumber)
+        let printInfo = BRPtouchPrintInfo()
+        printInfo.strPaperName = "62mmRB"
+        printInfo.nPrintMode = PRINT_FIT
+        printInfo.nAutoCutFlag = OPTION_AUTOCUT
+        ptp.setPrintInfo(printInfo)
+
+        guard ptp.isPrinterReady() else {
+            print("*** Printer is not Ready ***")
+            return
+        }
+
+        if ptp.startCommunication() {
+            let result = ptp.print(image.cgImage, copy: 1)
+            if result != ERROR_NONE_ {
+                print ("*** Printing Error ***")
+            }
+            ptp.endCommunication()
+        }
+        else {
+            print("Communication Error")
+        }
+    }
 }
 
 extension MainViewController: UICollectionViewDataSource {
@@ -491,6 +522,27 @@ extension MainViewController: CreateLoadViewControllerDelegate {
         fileName = name
         setup()
         timeLineCollectionView.reloadData()
+    }
+}
+
+extension MainViewController: BRSelectDeviceTableViewControllerDelegate {
+    func setSelected(deviceInfo: BRPtouchDeviceInfo) {
+        dismiss(animated: true, completion: nil)
+        guard let modelName = deviceInfo.strModelName else {return}
+        let venderName = "Brother "
+        let dev = venderName + modelName
+        guard let num = deviceInfo.strSerialNumber else {return}
+        let savedIndex = keyFrameIndex
+        let images = keyFrames.indices.map { index -> UIImage in
+            keyFrameIndex = index
+            setup()
+            return UIGraphicsImageRenderer(bounds: canvasView.bounds).image {renderer in
+                self.canvasView.drawHierarchy(in: self.canvasView.bounds, afterScreenUpdates: true)
+            }
+        }
+        keyFrameIndex = savedIndex
+        setup()
+        images.forEach { self.printImage(image: $0, deviceName: dev, serialNumber: num) }
     }
 }
 
